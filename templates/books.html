@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <a href="/">
+      <button>Back Home</button>
+    </a>
+    <h2>Book Store</h2>
+    <form method="POST" action="/books">
+      <input type="text" name="title" placeholder="Title"><br> 
+        <input type="text" name="author"
+        placeholder="Author"><br>
+      <input type="submit" value="Submit">
+    </form>
+    <h2>My Books</h2>
+    <ul>
+      {% for book in books %}
+      <li>{{ book.title }} by {{ book.author }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+
+</html>
